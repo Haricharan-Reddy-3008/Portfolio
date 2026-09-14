@@ -1,0 +1,161 @@
+/* About Section */
+.about {
+  background: var(--color-bg-secondary);
+  position: relative;
+}
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139,92,246,0.4), transparent);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 5rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+/* Avatar */
+.about__visual {
+  display: flex;
+  justify-content: center;
+}
+.about__avatar-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+.about__avatar-ring {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #8b5cf6, #ec4899, #06b6d4, #8b5cf6);
+  animation: spin-slow 6s linear infinite;
+  padding: 2px;
+  mask: radial-gradient(circle, transparent 65%, black 65%);
+  -webkit-mask: radial-gradient(circle, transparent 65%, black 65%);
+}
+.about__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(236,72,153,0.15));
+  border: 2px solid rgba(139,92,246,0.3);
+  display: grid;
+  place-items: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #a78bfa;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Floating Badges */
+.about__avatar-badge {
+  position: absolute;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(10,10,20,0.85);
+  border: 1px solid rgba(139,92,246,0.4);
+  color: #a78bfa;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+  z-index: 2;
+}
+.about__avatar-badge--1 { top: 10px; right: -30px; animation: float 4s ease-in-out infinite; }
+.about__avatar-badge--2 { bottom: 30px; right: -40px; animation: float 5s ease-in-out infinite 1s; }
+.about__avatar-badge--3 { bottom: 5px;  left: -20px; animation: float 6s ease-in-out infinite 0.5s; }
+
+/* Content */
+.about__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+.about__title-highlight {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.about__text {
+  color: #a09cb8;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  font-size: 0.97rem;
+}
+.about__text strong {
+  color: #c4b5fd;
+  font-weight: 600;
+}
+
+.about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.about__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Highlight Cards */
+.about__highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.about__highlight-card {
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  cursor: default;
+}
+.about__highlight-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.85rem;
+}
+.about__highlight-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #e2dff7;
+}
+.about__highlight-desc {
+  font-size: 0.82rem;
+  color: #6b6885;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about__highlights { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  .about__tags { justify-content: center; }
+  .about__actions { justify-content: center; }
+  .about__avatar-wrapper { width: 220px; height: 220px; margin: 0 auto; }
+  .about__avatar { font-size: 3rem; }
+  .about__avatar-badge--2, .about__avatar-badge--3 { display: none; }
+  .about__avatar-badge--1 { right: -10px; }
+}
+@media (max-width: 480px) {
+  .about__highlights { grid-template-columns: 1fr; }
+}

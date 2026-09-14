@@ -1,0 +1,196 @@
+/* Contact Section */
+.contact {
+  position: relative;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Info Side */
+.contact__info-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.contact__info-desc {
+  color: #a09cb8;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+/* Social Cards */
+.contact__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.contact__social-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.contact__social-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--social-color, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.contact__social-card:hover::before { opacity: 1; }
+.contact__social-card:hover {
+  border-color: rgba(255,255,255,0.15);
+  transform: translateX(4px);
+}
+
+.contact__social-icon {
+  width: 42px; height: 42px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+.contact__social-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.contact__social-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2dff7;
+}
+.contact__social-label {
+  font-size: 0.78rem;
+  color: #6b6885;
+}
+.contact__social-arrow {
+  color: #6b6885;
+  transition: color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+.contact__social-card:hover .contact__social-arrow {
+  color: var(--social-color, #a78bfa);
+  transform: translate(2px, -2px);
+}
+
+/* Form Card */
+.contact__form-card {
+  padding: 2.25rem;
+}
+.contact__form-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e2dff7;
+  margin-bottom: 1.75rem;
+}
+
+/* Form Elements */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.contact__form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #a09cb8;
+  letter-spacing: 0.03em;
+}
+.contact__form-group input,
+.contact__form-group textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: #f1f0f9;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  resize: vertical;
+  width: 100%;
+}
+.contact__form-group input::placeholder,
+.contact__form-group textarea::placeholder {
+  color: #6b6885;
+}
+.contact__form-group input:focus,
+.contact__form-group textarea:focus {
+  border-color: rgba(139,92,246,0.5);
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.12);
+}
+
+.contact__submit-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 0.9rem;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+.contact__submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.contact__spinner {
+  display: inline-block;
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin-slow 0.8s linear infinite;
+}
+
+/* Success State */
+.contact__success {
+  text-align: center;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.contact__success-icon {
+  font-size: 3rem;
+  animation: fadeInUp 0.5s ease;
+}
+.contact__success h4 {
+  font-size: 1.2rem;
+  color: #4ade80;
+}
+.contact__success p {
+  color: #a09cb8;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

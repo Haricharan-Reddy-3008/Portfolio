@@ -1,0 +1,283 @@
+/* Skyscanner Backpack Component Styling */
+
+.bpk-container {
+  padding: 2.5rem;
+  margin: 3rem 0;
+  border-radius: var(--radius-xl);
+  background: rgba(13, 20, 36, 0.7);
+  border: 1px solid rgba(0, 166, 152, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 166, 152, 0.12), var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.bpk-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00a698, #024b7a, #8b5cf6);
+}
+
+.bpk-badge-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.bpk-badge {
+  background: rgba(0, 166, 152, 0.15);
+  color: #00d4c3;
+  border: 1px solid rgba(0, 166, 152, 0.4);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.bpk-tech-tag {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--color-primary-light);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.bpk-header-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bpk-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 650px;
+}
+
+.bpk-trip-type {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.bpk-chip {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.bpk-chip--active {
+  background: #00a698;
+  color: #ffffff;
+  border-color: #00a698;
+  box-shadow: 0 4px 14px rgba(0, 166, 152, 0.35);
+}
+
+.bpk-calendar-card {
+  background: rgba(8, 14, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+.bpk-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bpk-calendar-month {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-family: var(--font-heading);
+}
+
+.bpk-calendar-nav {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: background var(--transition-fast);
+}
+
+.bpk-calendar-nav:hover {
+  background: rgba(0, 166, 152, 0.4);
+}
+
+.bpk-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.bpk-calendar-day-head {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.bpk-calendar-day {
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bpk-calendar-day:hover:not(.bpk-calendar-day--empty) {
+  background: rgba(0, 166, 152, 0.25);
+  color: #ffffff;
+}
+
+.bpk-calendar-day--selected {
+  background: #00a698 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 166, 152, 0.4);
+}
+
+.bpk-calendar-day--in-range {
+  background: rgba(0, 166, 152, 0.15);
+  color: #00d4c3;
+  border-radius: 0;
+}
+
+.bpk-calendar-day--empty {
+  cursor: default;
+}
+
+.bpk-dates-summary {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.bpk-date-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bpk-date-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bpk-date-val {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.bpk-actions {
+  margin-top: 1rem;
+}
+
+/* Backpack Continue Button */
+.bpk-button-continue {
+  background: #00a698;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.85rem 2.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 20px rgba(0, 166, 152, 0.35);
+  transition: all var(--transition-medium);
+  letter-spacing: 0.3px;
+}
+
+.bpk-button-continue:hover:not(:disabled) {
+  background: #008f83;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 166, 152, 0.5);
+}
+
+.bpk-button-continue:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bpk-confirmation-toast {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(0, 166, 152, 0.15);
+  border: 1px solid rgba(0, 166, 152, 0.4);
+  border-radius: var(--radius-md);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.bpk-toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.bpk-toast-icon {
+  font-size: 1.5rem;
+}
+
+.bpk-toast-title {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.bpk-toast-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.bpk-toast-close {
+  margin-left: auto;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.bpk-toast-close:hover {
+  color: #ffffff;
+}
