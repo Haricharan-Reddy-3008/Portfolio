@@ -113,7 +113,7 @@ export default function Projects() {
           {filtered.map((proj) => (
             <div
               key={proj.id}
-              className={`glass-card projects__card reveal ${proj.featured ? 'projects__card--featured' : ''}`}
+              className={`glass-card projects__card ${proj.featured ? 'projects__card--featured' : ''}`}
               style={{ '--proj-color': proj.color }}
             >
               {proj.featured && <div className="projects__featured-badge">⭐ Featured</div>}
